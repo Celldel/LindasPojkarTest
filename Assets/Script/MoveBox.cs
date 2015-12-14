@@ -32,12 +32,11 @@ public class MoveBox : MonoBehaviour {
 
 
 	void Start () {
-		//___________Används till 
+		//___________Används till de första Raycasten som sparar boolvärden_______
 		movement = new Vector3[] {Vector3.forward, -Vector3.forward, Vector3.right, -Vector3.right,Vector3.forward, Vector3.forward};
 		offset = new Vector3[]{new Vector3(dictanceFromPac,0,0),new Vector3(dictanceFromPac,0,0),new Vector3(0,0,dictanceFromPac),new Vector3(0,0,dictanceFromPac)};
 	
 		pacMoveDir = new Vector3[] {transform.forward, -transform.forward, transform.right, -transform.right, Vector3.zero};
-
 
 		vecDir = new Vector3[] {transform.right,transform.right,transform.forward,transform.forward, Vector3.zero};
 		offsetpush = new Vector3[] {new Vector3(0,0,movePacFromWallLength),new Vector3(0,0,-movePacFromWallLength),
@@ -80,7 +79,6 @@ public class MoveBox : MonoBehaviour {
 	void FixedUpdate (){
 		// ________________PacManMovement__________
 
-	
 		transform.position += pacMoveDir[direction] * Time.deltaTime * moveSpeed;
 
 		//_________________Raycast som flyttar Pac från vägg____________________
